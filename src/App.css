@@ -80,3 +80,11 @@ input[type='number'] {
 }
 
 /* End Input Style Reset */
+
+/* Start Graph */
+
+#chart {
+  margin-top: 3rem;
+}
+
+/* End Graph */

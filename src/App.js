@@ -2,7 +2,7 @@ import './App.css';
 import { Heading } from './components/Heading';
 import { Slider } from './components/Slider';
 import { Recovery } from './components/Recovery';
-import { Chart } from './components/Chart';
+import { Graph } from './components/Graph';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Slider />
         <div>
           <Recovery />
-          <Chart />
+          <Graph />
         </div>
       </div>
     </div>
