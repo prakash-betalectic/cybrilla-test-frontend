@@ -1,8 +1,8 @@
 import './App.css';
 import { Heading } from './components/Heading';
-import { Slider } from './components/Slider';
-import { Recovery } from './components/Recovery';
-import { Graph } from './components/Graph';
+import Slider from './components/Slider';
+import Recovery from './components/Recovery';
+import Graph from './components/Graph';
 
 function App() {
   return (

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-//import { Bar } from 'react-chartjs-2';
 import Chart from 'chart.js';
+import { connect } from 'react-redux';
 
-export const Graph = () => {
+const Graph = ({ finance }) => {
   const [myChart, setMyChart] = useState();
-  const [finance, setFinance] = useState([359000, 467000]);
 
   const getDataset = () => {
     return {
@@ -112,6 +111,8 @@ export const Graph = () => {
   );
 };
 
-// 1st bar - Cost as of today -> add all the values minus other expenses. Eg: 1+2+3+4 - 5
-// 2nd bar - Cost in 10 years -> (add all the values and multiply by inflation rate )/ recovery period
-// (*consider inflation rate as 1.2) Eg: (1+2+3)*1.2/6
+const mapStateToProps = state => ({
+  finance: state.calculator.finance,
+});
+
+export default connect(mapStateToProps)(Graph);

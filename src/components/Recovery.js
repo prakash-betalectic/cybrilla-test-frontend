@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { IconContext } from 'react-icons';
+import { useDispatch } from 'react-redux';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
+import { connect } from 'react-redux';
+import { addRecoveryPeriod } from '../actions/calculatorActions';
 
-export const Recovery = () => {
-  const [recoveryPeriod, setRecoveryPeriod] = useState();
+const Recovery = ({ recoveryPeriod }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className="Recovery">
       <p className="Recovery_title">
@@ -21,9 +25,15 @@ export const Recovery = () => {
           type="number"
           className="Recovery_input"
           value={recoveryPeriod}
-          onChange={e => setRecoveryPeriod(e.target.value)}
+          onChange={e => dispatch(addRecoveryPeriod(e.target.value))}
         />
       </span>
     </div>
   );
 };
+
+const mapStateToProps = state => ({
+  recoveryPeriod: state.calculator.recoveryPeriod,
+});
+
+export default connect(mapStateToProps)(Recovery);

@@ -1,29 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { IconContext } from 'react-icons';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
-import { processNumber } from '../util.js';
+import { useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
+import {
+  addReplacementIncome,
+  addHealthCareExpenses,
+  addHomeExpenses,
+  addMedicalExpenses,
+  addOtherExpenses,
+} from '../actions/calculatorActions';
 
-export const Slider = () => {
-  const [replacementIncome, setReplacementIncome] = useState('');
-  const [healthCareExpenses, setHealthCareExpenses] = useState('');
-  const [homeExpenses, setHomeExpenses] = useState('');
-  const [medicalExpenses, setMedicalExpenses] = useState('');
-  const [otherExpenses, setOtherExpenses] = useState('');
-
-  const handleOnChangeInput = (incomeAmount, incomeType) => {
-    incomeAmount = processNumber(incomeAmount);
-    if (incomeType === 'replacement') {
-      setReplacementIncome(incomeAmount);
-    } else if (incomeType === 'healthcare') {
-      setHealthCareExpenses(incomeAmount);
-    } else if (incomeType === 'homecare') {
-      setHomeExpenses(incomeAmount);
-    } else if (incomeType === 'medical') {
-      setMedicalExpenses(incomeAmount);
-    } else if (incomeType === 'other') {
-      setOtherExpenses(incomeAmount);
-    }
-  };
+const Slider = ({
+  replacementIncome,
+  healthCareExpenses,
+  homeExpenses,
+  medicalExpenses,
+  otherExpenses,
+}) => {
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -43,7 +38,7 @@ export const Slider = () => {
             <input
               className="Slider_input"
               value={replacementIncome}
-              onChange={e => handleOnChangeInput(e.target.value, 'replacement')}
+              onChange={e => dispatch(addReplacementIncome(e.target.value))}
             />
           </span>
         </div>
@@ -62,7 +57,7 @@ export const Slider = () => {
             <input
               className="Slider_input"
               value={healthCareExpenses}
-              onChange={e => handleOnChangeInput(e.target.value, 'healthcare')}
+              onChange={e => dispatch(addHealthCareExpenses(e.target.value))}
             />
           </span>
         </div>
@@ -81,7 +76,7 @@ export const Slider = () => {
             <input
               className="Slider_input"
               value={homeExpenses}
-              onChange={e => handleOnChangeInput(e.target.value, 'homecare')}
+              onChange={e => dispatch(addHomeExpenses(e.target.value))}
             />
           </span>
         </div>
@@ -100,7 +95,7 @@ export const Slider = () => {
             <input
               className="Slider_input"
               value={medicalExpenses}
-              onChange={e => handleOnChangeInput(e.target.value, 'medical')}
+              onChange={e => dispatch(addMedicalExpenses(e.target.value))}
             />
           </span>
         </div>
@@ -119,7 +114,7 @@ export const Slider = () => {
             <input
               className="Slider_input"
               value={otherExpenses}
-              onChange={e => handleOnChangeInput(e.target.value, 'other')}
+              onChange={e => dispatch(addOtherExpenses(e.target.value))}
             />
           </span>
         </div>
@@ -127,3 +122,13 @@ export const Slider = () => {
     </>
   );
 };
+
+const mapStateToProps = state => ({
+  replacementIncome: state.calculator.sliderData.replacementIncome,
+  healthCareExpenses: state.calculator.sliderData.healthCareExpenses,
+  homeExpenses: state.calculator.sliderData.homeExpenses,
+  medicalExpenses: state.calculator.sliderData.medicalExpenses,
+  otherExpenses: state.calculator.sliderData.otherExpenses,
+});
+
+export default connect(mapStateToProps)(Slider);
