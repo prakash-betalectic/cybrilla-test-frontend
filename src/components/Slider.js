@@ -6,7 +6,7 @@ export const Slider = () => {
   return (
     <>
       <div className="Slider">
-        <div class="Slicer_section">
+        <div className="Slider_section">
           <p className="Slider_title">
             Desired replacement income (after-tax){' '}
             <IconContext.Provider
@@ -21,7 +21,7 @@ export const Slider = () => {
             <input className="Slider_input" />
           </span>
         </div>
-        <div class="Slicer_section">
+        <div className="Slider_section">
           <p className="Slider_title">
             Out-of-pocket healthcare expenses{' '}
             <IconContext.Provider
@@ -32,11 +32,11 @@ export const Slider = () => {
               </span>
             </IconContext.Provider>
           </p>
-        </div>
-        <div class="Slicer_section">
           <span className="Slider_input_container">
             <input className="Slider_input" />
           </span>
+        </div>
+        <div className="Slider_section">
           <p className="Slider_title">
             Home modification expenses{' '}
             <IconContext.Provider
@@ -51,7 +51,7 @@ export const Slider = () => {
             <input className="Slider_input" />
           </span>
         </div>
-        <div class="Slicer_section">
+        <div className="Slider_section">
           <p className="Slider_title">
             Medical homecare expenses{' '}
             <IconContext.Provider
@@ -66,7 +66,7 @@ export const Slider = () => {
             <input className="Slider_input" />
           </span>
         </div>
-        <div class="Slicer_section">
+        <div className="Slider_section">
           <p className="Slider_title">
             Other expenses (transport, childcare, etc){' '}
             <IconContext.Provider

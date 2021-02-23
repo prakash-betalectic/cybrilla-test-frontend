@@ -2,7 +2,7 @@
 
 .App {
   margin: 50px auto;
-  max-width: 60%;
+  max-width: 80%;
   text-align: center;
 }
 
@@ -91,9 +91,14 @@ input[type='number'] {
 
 /* Start Slider */
 
+.Slider_section {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
 .Slider_title {
   display: flex;
-  margin: 25px 0 5px;
+  margin-bottom: 5px;
   font-weight: 600;
   font-size: 15px;
 }
@@ -123,3 +128,88 @@ input[type='number'] {
 }
 
 /* End Slider */
+
+/* Start Responsive styles */
+
+/* @media all and (max-width: 1200px) {
+
+  .App_Main_Section {
+    grid-template-columns: 1fr;
+    margin-top: 3rem;
+  }
+
+  .Slider {
+    margin-bottom: 3rem;
+  }
+
+  .Slider_input_container.Slider_input_text::after {
+    top: 10px;
+  }
+
+  .Slider_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+} */
+
+@media all and (max-width: 1200px) {
+  .App {
+    max-width: 95%;
+  }
+
+  .Heading_title {
+    font-size: 2rem;
+  }
+
+  .Heading_secondary_title {
+    font-size: 1rem;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .App_Main_Section {
+    /*grid-template-columns: 1fr;*/
+    display: block;
+    margin-top: 3rem;
+  }
+
+  .Slider {
+    margin-bottom: 3rem;
+  }
+
+  .Slider_input_container.Slider_input_text::after {
+    top: 10px;
+  }
+
+  .Slider_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .Slider_section {
+    flex-direction: column;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .App {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .Recovery {
+    flex-direction: column;
+  }
+
+  .Recovery_title {
+    margin-top: 0;
+  }
+
+  .Slider_section {
+    max-width: 100vw;
+  }
+}
+
+/* End Responsive styles */
