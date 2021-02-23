@@ -8,7 +8,6 @@ export const Recovery = () => {
       <p className="Recovery_title">
         Recovery Chart{' '}
         <IconContext.Provider
-          className="Recovery_Icon"
           value={{ color: '#bbb', size: '20px', paddingLeft: '20px' }}
         >
           <span>
