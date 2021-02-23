@@ -131,28 +131,6 @@ input[type='number'] {
 
 /* Start Responsive styles */
 
-/* @media all and (max-width: 1200px) {
-
-  .App_Main_Section {
-    grid-template-columns: 1fr;
-    margin-top: 3rem;
-  }
-
-  .Slider {
-    margin-bottom: 3rem;
-  }
-
-  .Slider_input_container.Slider_input_text::after {
-    top: 10px;
-  }
-
-  .Slider_section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-} */
-
 @media all and (max-width: 1200px) {
   .App {
     max-width: 95%;
@@ -169,7 +147,6 @@ input[type='number'] {
 
 @media all and (max-width: 1024px) {
   .App_Main_Section {
-    /*grid-template-columns: 1fr;*/
     display: block;
     margin-top: 3rem;
   }
