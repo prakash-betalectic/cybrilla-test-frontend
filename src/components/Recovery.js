@@ -22,7 +22,6 @@ const Recovery = ({ recoveryPeriod }) => {
       </p>
       <span className="Recovery_input_container">
         <input
-          type="number"
           className="Recovery_input"
           value={recoveryPeriod}
           onChange={e => dispatch(addRecoveryPeriod(e.target.value))}

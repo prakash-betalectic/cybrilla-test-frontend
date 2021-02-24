@@ -6,7 +6,7 @@ import {
   ADD_MEDICAL_EXPENSES,
   ADD_OTHER_EXPENSES,
 } from '../actions/calculatorActions';
-import { processNumber, calculateFinance } from '../util.js';
+import { processNumber, calculateFinance, validateForNumber } from '../util.js';
 
 export const initialState = {
   sliderData: {
@@ -23,6 +23,8 @@ export const initialState = {
 export default function calculatorReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_RECOVERY_PERIOD:
+      const isInputNumeric = validateForNumber(action.payload.recoveryPeriod);
+      if (!isInputNumeric) return;
       const currentStateRecovery = {
         ...state,
         recoveryPeriod: Number(action.payload.recoveryPeriod),
